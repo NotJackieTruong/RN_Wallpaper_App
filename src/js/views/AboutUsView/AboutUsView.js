@@ -38,7 +38,8 @@ const styles = StyleSheet.create( {
 	container: {
 		flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
+		alignItems: 'center',
+		backgroundColor: '#1c222a'
 	},
 	icons: {
 		justifyContent: 'center',
@@ -48,7 +49,8 @@ const styles = StyleSheet.create( {
 	text: {
 		fontSize: 20,
 		padding: 10,
-		margin: 5
+		margin: 5,
+		color: 'white'
 	},
 	backlinks: {
 		justifyContent: 'center',

@@ -17,8 +17,9 @@ import com.reactnativecommunity.cameraroll.CameraRollPackage; // for camera roll
 import java.util.Arrays;
 import com.facebook.react.shell.MainReactPackage;
 import com.rnfs.RNFSPackage; 
+import androidx.multidex.MultiDexApplication;
 
-public class MainApplication extends Application implements ReactApplication {
+public class MainApplication extends MultiDexApplication implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {

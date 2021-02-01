@@ -19,58 +19,67 @@ import { AboutUsView } from 'views/AboutUsView';
 import { DemoView } from 'views/DemoView';
 import { WallpaperAppContainer, HomeScreen } from 'components/containers/WallpaperAppContainer';
 import { FullScreenImageView } from 'views/FullScreenImageView';
-import { SearchWallpaper} from 'components/containers/SearchWallpaper';
+import { SearchWallpaper } from 'components/containers/SearchWallpaper';
+import { CollectionsView } from 'views/CollectionsView'
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
 export class WallpaperStackContainer extends Component {
-	render() {
-		return (
-                <Tab.Navigator initialRouteName="Home" >
-                <Tab.Screen
-                    name="Home"
-                    component={ WallpaperAppContainer }
-
-                    // options={{headerShown: false}}
-                    options={{
-                          tabBarLabel: 'Home',
-                          tabBarIcon: ( { color } ) => (
-                            <MaterialCommunityIcons name="home" color={color} size={26} />
-                          ),
-                        }}
-                />
-                <Tab.Screen
-                    name="Search"
-                    component={ SearchWallpaper }
-                    options={{
-                      tabBarLabel: 'Search',
-                      tabBarIcon: ( { color } ) => (
-                        <MaterialCommunityIcons name="magnify" color={color} size={26} />
-                        ),
-                      }}
-                />
-                {/* <Tab.Screen name="Demo" component={ DemoView } /> */}
-                <Tab.Screen
-                  name="About Us"
-                  component={ AboutUsView }
-                  options={{
-                    tabBarLabel: 'About Us',
-                    tabBarIcon: ( { color } ) => (
-                      <MaterialCommunityIcons name="information-outline" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                </Tab.Navigator>
-		);
-	}
+  render() {
+    return (
+      <Tab.Navigator initialRouteName="Home" barStyle={{ backgroundColor: '#232d36' }} inactiveColor="#3e6c91">
+        <Tab.Screen
+          name="Home"
+          component={WallpaperAppContainer}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="home" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Search"
+          component={SearchWallpaper}
+          options={{
+            tabBarLabel: 'Search',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="magnify" color={color} size={26} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Collections"
+          component={CollectionsView}
+          options={{
+            tabBarLabel: 'Collections',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="album" color={color} size={26} />
+            ),
+          }}
+        />
+        {/* <Tab.Screen name="Demo" component={ DemoView } /> */}
+        <Tab.Screen
+          name="About Us"
+          component={AboutUsView}
+          options={{
+            tabBarLabel: 'About Us',
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="information-outline" color={color} size={26} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    );
+  }
 }
 
-const styles = StyleSheet.create( {
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   },
 
-} );
+});
